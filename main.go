@@ -56,7 +56,7 @@ func main() {
 	denom := 2
 	for len(pool) > 1 {
 		fmt.Printf("there are %d bases in your pool\n", len(pool))
-		fmt.Printf("the smallest base in your pool is base %d\n", pool.Smallest())
+		fmt.Printf("the smallest base in your pool is base %d, %s\n", pool.Smallest(), NameBase(int(pool.Smallest())))
 		amt, length, recurring := pool.LargestExpansionFor(denom)
 		if recurring {
 			fmt.Printf("%d bases in your pool represent 1/%d with a repeating decimal\n", len(amt), denom)
@@ -75,7 +75,7 @@ func main() {
 	}
 	if len(pool) == 1 {
 		best := pool.Smallest()
-		fmt.Printf("oh wow, it looks like base %d is the best for you!\n", best)
+		fmt.Printf("oh wow, it looks like base %d, %s, is the best for you!\n", best, NameBase(int(best)))
 	} else {
 		println("oh no, it doesn't look like any bases are good for you")
 	}
