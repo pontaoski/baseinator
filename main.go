@@ -14,6 +14,7 @@ var (
 )
 
 func main() {
+	println("hi, this is libre software, licensed under the AGPL. the source is available at https://github.com/pontaoski/baseinator")
 	println("welcome to baser, a program that helps you figure out what base is best for your needs!")
 	println("before we begin, let's set a few boundaries. what is the largest base you'd want to use?")
 	res, _ := (&promptui.Prompt{
