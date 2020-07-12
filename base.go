@@ -96,3 +96,13 @@ func (b Base) DecimalFor(denominator int) (string, string) {
 	}
 	return result.String(), ""
 }
+
+func (b Base) Name() string {
+	if val, ok := names[b]; ok {
+		return val
+	}
+	if b < 0 {
+		return "nega" + (-1 * b).Name()
+	}
+	return replacer.Replace(suffix(b))
+}
