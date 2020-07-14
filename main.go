@@ -3,7 +3,12 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
+	"os"
 	"strconv"
+
+	"net/http"
+	_ "net/http/pprof"
 
 	"github.com/manifoldco/promptui"
 )
@@ -14,6 +19,11 @@ var (
 )
 
 func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+	println(Base((1 << 31) - 1).Name())
+	os.Exit(0)
 	println("hi, this is libre software, licensed under the AGPL. the source is available at https://github.com/pontaoski/baseinator")
 	println("welcome to baser, a program that helps you figure out what base is best for your needs!")
 	println("before we begin, let's set a few boundaries. what is the largest base you'd want to use?")
