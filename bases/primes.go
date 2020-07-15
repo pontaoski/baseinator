@@ -1,4 +1,4 @@
-package main
+package bases
 
 var primes = []Base{
 	2,

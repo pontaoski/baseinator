@@ -1,4 +1,4 @@
-package main
+package bases
 
 import (
 	"strconv"

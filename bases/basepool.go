@@ -1,4 +1,4 @@
-package main
+package bases
 
 type BasePool map[Base]struct{}
 

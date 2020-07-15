@@ -1,6 +1,7 @@
 package main
 
 import (
+	"baseinator/bases"
 	"errors"
 	"fmt"
 	"strconv"
@@ -53,7 +54,7 @@ func main() {
 		},
 	}).Run()
 	minimumBase, _ = strconv.ParseInt(res, 10, 64)
-	pool := PoolForRange(minimumBase, maximumBase)
+	pool := bases.PoolForRange(minimumBase, maximumBase)
 	denom := 2
 	for len(pool) > 1 {
 		fmt.Printf("there are %d bases in your pool\n", len(pool))
